@@ -1,0 +1,129 @@
+Here's a basic code structure for a tourist app website using HTML, CSS, and JavaScript:
+
+HTML (index.html)
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2em;
+        }
+
+        section {
+            background-color: #f54caf;
+            padding: 1em;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        .destination-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .destination-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="http://127.0.0.1:3000/home.html">Home</a></li>
+                <li><a href="http://127.0.0.1:3000/about.html">Destinations</a></li>
+                <li><a href="http://127.0.0.1:3000/dest.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h1>Welcome to Tourist App</h1>
+            <p>Explore new destinations and plan your trip!</p>
+            <button>Get Started</button>
+        </section>
+        <section id="destinations">
+            <h2>Popular Destinations</h2>
+            <div class="destination-card">
+                <img src="image1.jpg" alt="Destination 1">
+                <h3>Destination 1</h3>
+                <p>Short description of Destination 1</p>
+            </div>
+            <div class="destination-card">
+                <img src="image2.jpg" alt="Destination 2">
+                <h3>Destination 2</h3>
+                <p>Short description of Destination 2</p>
+            </div>
+            <!-- Add more destination cards here -->
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed,
+                convallis ex.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Tourist App</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
