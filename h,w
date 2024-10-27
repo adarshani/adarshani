@@ -1,12 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-</titl>My Fonrite
-</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card with Pagination</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .card h3 {
+            margin: 16px 0 8px;
+        }
+
+        .card p {
+            color: #555;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            list-style: none;
+        }
+
+        .pagination li {
+            margin: 0 5px;
+        }
+
+        .pagination a {
+            padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        .pagination a:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
+
 <body>
+    <div class="container">
+        <div class="card-container">
+            <div class="card">
+                <img src="image1.jpg" alt="Card Image 1">
+                <h3>Card Title 1</h3>
+                <p>This is a description for card 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="card">
+                <img src="image2.jpg" alt="Card Image 2">
+                <h3>Card Title 2</h3>
+                <p>This is a description for card 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <!-- Add more cards as needed -->
+        </div>
+        <ul class="pagination">
+            <li><a href="#">&laquo; Prev</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">Next &raquo;</a></li>
+        </ul>
+    </div>
+</body>
 
-    <audio controls autoplay>
-     <source src   
-    
-
+</html>
