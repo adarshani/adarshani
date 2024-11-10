@@ -6,6 +6,7 @@
     <title>JS Built In</title>
 </head>
 <body>
+    <p id="demo"></p>
     <script type="text/javascript">
         var value = Math.acos(-1)
         document.write ("demo1 test value"+value+"<br>")
@@ -13,6 +14,7 @@
             document.write("demo1 test value" + value + "<br>")
             var value = Math.atan(0.5)
                 document.write("demo1 test value" + value + "<br>")
+                document.getElementById(demo) .innerHTML=value
     </script>
     
 </body>
