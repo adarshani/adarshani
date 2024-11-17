@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Calculator</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #444;
+        }
+
+        input[type="number"] {
+            margin: 10px;
+            padding: 5px;
+            font-size: 1em;
+            width: calc(100% - 22px);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Student Grade Calculator</h2>
+        <p>Calculate Average Grade</p>
+        <input type="number" id="grade1" placeholder="Enter grade 1">
+        <input type="number" id="grade2" placeholder="Enter grade 2">
+        <input type="number" id="grade3" placeholder="Enter grade 3">
+        <button onclick="calculateAverage()">Calculate</button>
+        <p id="grade-demo"></p>
+    </div>
+
+    <div class="container">
+        <h2>Subjects List</h2>
+        <p id="subject-demo"></p>
+    </div>
+
+    <script>
+        function add(a, b) {
+            return a + b;
+        }
+
+        function average(a, b, c) {
+            return (a + b + c) / 3;
+        }
+
+        function calculateAverage() {
+            var grade1 = parseFloat(document.getElementById('grade1').value) || 0;
+            var grade2 = parseFloat(document.getElementById('grade2').value) || 0;
+            var grade3 = parseFloat(document.getElementById('grade3').value) || 0;
+            let avg = average(grade1, grade2, grade3);
+            document.getElementById("grade-demo").innerHTML = "Average Grade: " + avg.toFixed(2);
+        }
+
+        var subjects = ["Math", "Science", "English", "History", "Physical Education"];
+        document.getElementById("subject-demo").innerHTML = "Subjects: " + subjects.join(", ");
+    </script>
+</body>
+
+</html>
