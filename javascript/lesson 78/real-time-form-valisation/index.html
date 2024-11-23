@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Enter The Following details</h2>
+    <form id="lofinforn" onsubmit="validate(event)">
+        <fieldset>
+          <label>Enter your Email</label>
+            <input type="email" id="email" name="email"> <br><br>
+            <label id="age" name="age" max="50" min="12">Enter age</label>
+            <input type="number"><br><br>
+            <label id="password" name="password" minlength="8">Enter Password</label>
+            <input type="password" name="password" id="password"><br><br>
+            <button type="submit">Log IN</button>
+            <div id="message"></div>
+        </fieldset>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
