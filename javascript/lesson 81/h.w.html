@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e0f7fa;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #00796b;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 10px;
+            border: none;
+            background-color: #00796b;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005f56;
+        }
+
+        p {
+            font-size: 1.1em;
+        }
+
+        .result {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>JS Array Operations</h2>
+    <section>
+        <p>Click the buttons to sort the array in ascending and descending order, respectively:</p>
+        <button onclick="ascending()">Sort Ascending</button>
+        <button onclick="descending()">Sort Descending</button>
+        <div class="result">
+            <p>Original Array: <span id="originalArray">[10, 40, 30, 20]</span></p>
+            <p>Sorted Array: <span id="sortedArray"></span></p>
+        </div>
+    </section>
+
+    <section>
+        <p>Multiply every element in the array by 10:</p>
+        <button onclick="multiplyArray()">Multiply Array</button>
+        <div class="result">
+            <p>Original Array: <span id="originalNumbers">[1, 2, 3, 4]</span></p>
+            <p>New Array: <span id="newArray"></span></p>
+        </div>
+    </section>
+
+    <script>
+        // Array Sorting Section
+        var points = [10, 40, 30, 20];
+        document.getElementById("originalArray").innerHTML = points;
+
+        function ascending() {
+            points.sort(function (a, b) {
+                return a - b;
+            });
+            document.getElementById('sortedArray').innerHTML = points;
+        }
+
+        function descending() {
+            points.sort(function (a, b) {
+                return b - a;
+            });
+            document.getElementById('sortedArray').innerHTML = points;
+        }
+
+        // Array Multiplication Section
+        var numbers = [1, 2, 3, 4];
+        document.getElementById("originalNumbers").innerHTML = numbers;
+
+        function multiplyArray() {
+            var newArray = numbers.map(function (num) {
+                return num * 10;
+            });
+            document.getElementById("newArray").innerHTML = newArray;
+            console.log(newArray);
+        }
+    </script>
+</body>
+
+</html>
