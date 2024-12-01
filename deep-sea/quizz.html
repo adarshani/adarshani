@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background: #e0f7fa;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+#quiz-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+}
+
+h2 {
+    color: #00796b;
+}
+
+.question {
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #00796b;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005f56;
+}
+
+#results {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #00796b;
+}
+
+    </style>
+</head>
+
+<body>
+    <div id="quiz-container">
+        <h2>Marine Biology Quiz</h2>
+        <form id="quiz-form">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. What is the largest ocean on Earth?</p>
+                <label><input type="radio" name="question1" value="A"> Atlantic Ocean</label><br>
+                <label><input type="radio" name="question1" value="B"> Indian Ocean</label><br>
+                <label><input type="radio" name="question1" value="C"> Arctic Ocean</label><br>
+                <label><input type="radio" name="question1" value="D"> Pacific Ocean</label>
+            </div>
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. Which marine animal is known as the 'Sea Cow'?</p>
+                <label><input type="radio" name="question2" value="A"> Dolphin</label><br>
+                <label><input type="radio" name="question2" value="B"> Whale</label><br>
+                <label><input type="radio" name="question2" value="C"> Manatee</label><br>
+                <label><input type="radio" name="question2" value="D"> Shark</label>
+            </div>
+            <!-- Submit Button -->
+            <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+        </form>
+        <div id="results"></div>
+    </div>
+    <script>
+        /* script.js */
+            function submitQuiz() {
+                const quizForm = document.getElementById('quiz-form');
+                const resultsDiv = document.getElementById('results');
+                let score = 0;
+                const totalQuestions = 2;
+
+                // Answers to the quiz
+                const answers = {
+                    question1: 'D',  // Pacific Ocean
+                    question2: 'C'   // Manatee
+                };
+
+                // Iterate through each question and check the answer
+                for (let question in answers) {
+                    const userAnswer = quizForm.elements[question].value;
+                    if (userAnswer === answers[question]) {
+                        score++;
+                    }
+                }
+
+                // Display the results
+                resultsDiv.innerHTML = `You scored ${score} out of ${totalQuestions}!`;
+            }
+
+    </script>
+</body>
+
+</html>

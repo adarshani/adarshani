@@ -1,13 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Full-Screen Video with Navigation Button</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #navigate {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white(0, 0, 0, 0.5);
+            color:black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #navigate:hover {
+            background-color:rgb(158, 178, 207);
+        }
+    </style>
 </head>
+
 <body>
+    <video id="myVideo" src="deepsea.mp4" autoplay loop muted></video>
+    <button id="navigate" onclick="navigateToNextPage()">Next Page</button>
 
-
-    
+    <script>
+        function navigateToNextPage() {
+            window.location.href = 'quizz.html'; // Replace with the actual URL or path to your next page
+        }
+    </script>
 </body>
+
 </html>
