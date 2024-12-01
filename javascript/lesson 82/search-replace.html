@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Search And Replace</h2>
+    <p>Search the word doing, Replace "how" with "how are you doing"</p>
+    <p id="search_result"></p>
+    <p id="replace_result"></p>
+    <p id="string_result"></p>
+    <p id="add"></p>
+    <script>
+        var str="how are doing for today "
+        var search = str.search("doing")
+        var txt = str.replace("how are","how are you")
+        var x=70;
+        var y=90;
+        document.getElementById("search_result").innerHTML=search
+         document.getElementById("replace_result").innerHTML = txt
+         document.getElementById("add").innerHTML=x+y
+         document.getElementById("string_result").innerHTML = String(x) + String(y)
+         
+
+    </script>
+</body>
+</html>
