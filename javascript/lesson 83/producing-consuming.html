@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        function myDisplayer(sum){
+document.getElementById("demo").innerHTML = sum
+        }
+        function sum(a,b){
+            var sum=a+b 
+            myDisplayer(sum);
+        }
+        
+        let mypromise = new Promise(function(myresolve, myreject)  {
+            let x=0
+            if (x==0){
+                 myresolve("ok")
+
+            }
+            else {
+                myreject("error")
+            }
+            
+        })
+        mypromise.then(
+            function(value){
+                sum(2,3);
+            },
+            function(error){
+                sum(error);
+            }
+
+        )
+    
+        
+    
+    </script>
+</body>
+</html>
