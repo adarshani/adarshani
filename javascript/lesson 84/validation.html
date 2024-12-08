@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validateform(){
+            var x = document.forms["myform"]["fname"].value
+            if(x=="") {
+            alert('plese enter your name')
+            return false;
+        }
+        else document.write ("name submited")
+        }
+        
+
+
+            
+    </script>
+</head>
+<body>
+    <form name="myform" onsubmit="validateform()">
+        name : <input type="text" name="fname">
+        <input type="submit" value="submit">
+        <p id="msg"></p>
+    </form>
+</body>
+</html>
