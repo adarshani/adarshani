@@ -154,6 +154,7 @@ a {
     </div>
 
     <script>
+<<<<<<< HEAD
         function clearScreen() {
                 document.getElementById("result").value = "";
             }
@@ -179,6 +180,32 @@ a {
 
             }
     </script>
+=======
+    function clearScreen(){
+    document.getElementById("result").value="";
+}
+
+
+function setScreenValue(value){
+    document.getElementById("result").value+= value;
+}
+function calculateResult(){
+    const resultElement = document.getElementById("result")
+    const expression = resultElement.value.trim()
+    if (expression === ""){
+        resultElement.value='enter an expression'
+        return 
+    }
+    try{
+        resultElement.value=eval(expression)
+    }
+    catch (e){
+        resultElement.value="invalid Expression"
+
+    }
+
+}</script>
+>>>>>>> 8bd900923dfafe1c7a557d80a2f01839bc94716b
 </body>
 
 </html>
