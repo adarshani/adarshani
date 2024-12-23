@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Utility App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .result {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Async/Await Addition</h2>
+    <div class="section">
+        <p>Result of 5 + 6</p>
+        <p id="async_result" class="result"></p>
+    </div>
+
+    <h2>Promise Handling</h2>
+    <div class="section">
+        <p>Checking if x is 0 and summing 2 + 3</p>
+        <p id="promise_result" class="result"></p>
+    </div>
+
+    <h2>Callback Function</h2>
+    <div class="section">
+        <p>Sum of 5 and 5 using callback</p>
+        <p id="callback_result" class="result"></p>
+    </div>
+
+    <script>
+        // Async/Await Addition
+        async function add(a, b) {
+            let response = await a + b;
+            displayAsync(response);
+        }
+
+        function displayAsync(sum) {
+            document.getElementById("async_result").innerHTML = "Sum (Async): " + sum;
+        }
+
+        add(5, 6);
+
+        // Promise Handling
+        function myDisplayer(sum) {
+            document.getElementById("promise_result").innerHTML = "Sum (Promise): " + sum;
+        }
+
+        function sum(a, b) {
+            var sum = a + b;
+            myDisplayer(sum);
+        }
+
+        let myPromise = new Promise(function (myResolve, myReject) {
+            let x = 0;
+            if (x == 0) {
+                myResolve("ok");
+            } else {
+                myReject("error");
+            }
+        });
+
+        myPromise.then(
+            function (value) {
+                sum(2, 3);
+            },
+            function (error) {
+                myDisplayer(error);
+            }
+        );
+
+        // Callback Function
+        function callbackDisplayer(value) {
+            document.getElementById("callback_result").innerHTML = "Sum (Callback): " + value;
+        }
+
+        function myCalculator(num1, num2, myCallback) {
+            let sum = num1 + num2;
+            myCallback(sum);
+        }
+
+        myCalculator(5, 5, callbackDisplayer);
+    </script>
+</body>
+
+</html>
