@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Utility Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .result {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Search and Replace</h2>
+    <div class="section">
+        <p>Search the word "doing", Replace "how are" with "how are you"</p>
+        <p id="search_result" class="result"></p>
+        <p id="replace_result" class="result"></p>
+        <p id="string_result" class="result"></p>
+        <p id="add" class="result"></p>
+    </div>
+
+    <h2>Error Handling</h2>
+    <div class="section">
+        <p id="error_demo" class="result"></p>
+    </div>
+
+    <h2>Arrow Function in JS</h2>
+    <div class="section">
+        <p id="arrow_result" class="result"></p>
+        <p id="function_result" class="result"></p>
+    </div>
+
+    <script>
+        // Search and Replace
+        var str = "how are doing for today";
+        var search = str.search("doing");
+        var txt = str.replace("how are", "how are you");
+        var x = 70;
+        var y = 90;
+
+        document.getElementById("search_result").innerHTML = "Search index: " + search;
+        document.getElementById("replace_result").innerHTML = "Replaced text: " + txt;
+        document.getElementById("add").innerHTML = "Sum of x and y: " + (x + y);
+        document.getElementById("string_result").innerHTML = "Concatenation of x and y: " + String(x) + String(y);
+
+        // Error Handling
+        try {
+            addalert("hello");
+        } catch (err) {
+            document.getElementById("error_demo").innerHTML = "Error: " + err.message;
+        }
+
+        // Arrow Function in JS
+        const add = (a, b) => a - b;
+        document.getElementById("arrow_result").innerHTML = "Arrow Function Result: " + add(4, 6);
+
+        function sub(x, y) {
+            return x - y;
+        }
+        document.getElementById("function_result").innerHTML = "Regular Function Result: " + sub(3, 2);
+    </script>
+</body>
+
+</html>
