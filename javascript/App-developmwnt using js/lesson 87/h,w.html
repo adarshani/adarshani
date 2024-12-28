@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+    background-color: #1a1a2e;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 400px;
+    background-color: #162447;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.progress {
+    display: flex;
+    align-items: center;
+}
+
+.progress-bar {
+    width: 100px;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.progress-bar::after {
+    content: '';
+    width: 0%;
+    height: 100%;
+    background-color: #00adb5;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.progress-text {
+    font-size: 14px;
+}
+
+.task-input {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.task-input input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #1f4068;
+    color: #fff;
+}
+
+.task-input button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00adb5;
+    color: #fff;
+    cursor: pointer;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f4068;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.task-item.completed {
+    text-decoration: line-through;
+    color: #00adb5;
+}
+
+.task-item button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.task-item button.edit {
+    margin-right: 10px;
+}
+
+.task-item button.delete {
+    color: #ff2e63;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>To-Do List</h1>
+            <div class="progress">
+                <div class="progress-bar" id="progress-bar"></div>
+                <span class="progress-text" id="progress-text">0/0</span>
+            </div>
+        </div>
+        <div class="task-input">
+            <input type="text" id="task-input" placeholder="Write your task">
+            <button onclick="addTask()">+</button>
+        </div>
+        <ul class="task-list" id="task-list">
+            <!-- Task items will be added here dynamically -->
+        </ul>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+                updateProgress();
+            });
+
+            function addTask() {
+                const taskInput = document.getElementById("task-input");
+                const taskList = document.getElementById("task-list");
+
+                if (taskInput.value.trim() === "") {
+                    alert("Please enter a task.");
+                    return;
+                }
+
+                const li = document.createElement("li");
+                li.className = "task-item";
+                li.innerHTML = `
+        <span>${taskInput.value}</span>
+        <div>
+            <button class="edit" onclick="editTask(this)">Edit</button>
+            <button class="delete" onclick="deleteTask(this)">Delete</button>
+        </div>
+    `;
+
+                taskList.appendChild(li);
+                taskInput.value = "";
+
+                updateProgress();
+            }
+
+            function editTask(button) {
+                const taskItem = button.parentElement.parentElement;
+                const taskText = taskItem.querySelector("span").innerText;
+                const newTaskText = prompt("Edit your task:", taskText);
+
+                if (newTaskText !== null && newTaskText.trim() !== "") {
+                    taskItem.querySelector("span").innerText = newTaskText;
+                }
+
+                updateProgress();
+            }
+
+            function deleteTask(button) {
+                const taskItem = button.parentElement.parentElement;
+                taskItem.remove();
+
+                updateProgress();
+            }
+
+            function updateProgress() {
+                const taskList = document.getElementById("task-list");
+                const tasks = taskList.getElementsByTagName("li");
+                const completedTasks = taskList.getElementsByClassName("completed");
+
+                const progressBar = document.getElementById("progress-bar");
+                const progressText = document.getElementById("progress-text");
+
+                const totalTasks = tasks.length;
+                const completedTasksCount = completedTasks.length;
+
+                const progressPercentage = totalTasks === 0 ? 0 : (completedTasksCount / totalTasks) * 100;
+                progressBar.style.width = progressPercentage + "%";
+                progressText.innerText = `${completedTasksCount}/${totalTasks}`;
+            }
+
+            document.addEventListener("click", (event) => {
+                if (event.target.tagName === "SPAN") {
+                    event.target.parentElement.classList.toggle("completed");
+                    updateProgress();
+                }
+            });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculator {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input,
+        select,
+        button {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <h2>Area Calculator</h2>
+        <select id="shape">
+            <option value="rectangle">Rectangle</option>
+            <option value="triangle">Triangle</option>
+            <option value="circle">Circle</option>
+            <option value="parallelogram">Parallelogram</option>
+        </select>
+        <input type="number" id="dimension1" placeholder="Enter first dimension" required>
+        <input type="number" id="dimension2" placeholder="Enter second dimension (if applicable)">
+        <button onclick="calculateArea()">Calculate Area</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function calculateArea() {
+            var shape = document.getElementById("shape").value;
+            var dimension1 = Number(document.getElementById("dimension1").value);
+            var dimension2 = Number(document.getElementById("dimension2").value);
+            var result;
+
+            if (shape === "rectangle") {
+                result = dimension1 * dimension2;
+                document.getElementById("result").innerHTML = "The area of the rectangle is " + result;
+            } else if (shape === "triangle") {
+                result = (dimension1 * dimension2) / 2;
+                document.getElementById("result").innerHTML = "The area of the triangle is " + result;
+            } else if (shape === "circle") {
+                result = 3.14 * dimension1 * dimension1;
+                document.getElementById("result").innerHTML = "The area of the circle is " + result;
+            } else if (shape === "parallelogram") {
+                result = dimension1 * dimension2;
+                document.getElementById("result").innerHTML = "The area of the parallelogram is " + result;
+            } else {
+                document.getElementById("result").innerHTML = "Invalid shape";
+            }
+        }
+    </script>
+</body>
+
+</html>
