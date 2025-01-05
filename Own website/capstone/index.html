@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: aliceblue;
+            color: #333;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333
+        }
+
+        .topnav a,h1 {
+            float: left;
+            color: white;
+            font-size: 20px;
+            padding: 14px;
+            text-align: center;
+            text-decoration: solid;
+        }
+
+        .topnav a:hover {
+            background-color: gainsboro;
+            color: rgb(140, 140, 235);
+        }
+
+        .topnav a.active {
+            background-color: yellowgreen;
+            color: aliceblue;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+            text-transform: capitalize;
+            background-color: rgb(205, 195, 50);
+            color: aliceblue;
+        }
+        .carousel-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+        }
+        .myslides{
+            display:none;
+            max-height: 100%;
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topnav">
+        <h1 style="text-decoration: solid;color: rgb(0, 0, 0);">Profitilo App</h1>
+
+        
+
+        <a class="active" href="home.html">Home Page</a>
+        <a class="about" href="about.html">About Me</a>
+        <a class="contact" href="contact.html">Contact Us</a>
+        
+
+    </div>
+    <div class="carousel-container">
+        <img class="myslides" src="pro2.jpeg" height="300" width="300" alt="slide2">
+        <!-- <img class="myslides" src="pro3.jpeg" height="300" width="300" alt="slide3">
+        <img class="myslides" src="pro1.jpeg" height="300" width="300" alt="slide1">
+        <img class="myslides" src="pro4.jpeg" height="300" width="300" alt="slide4"> -->
+    </div>
+    <script>
+        function carousel(){
+        var index=0;
+        var i;
+        var x = document.getElementsByName("myslides");
+        for (i = 0; i < x.length; i++){` `
+             x[i].style.display = "none";
+        }
+        index++;
+        if (index > x.length){
+            index=1;
+        }
+
+        x[index - 1].style.display = "Block";
+        setTimeout(carousel, 2000);
+            carousel()}
+
+    
+    </script>
+    
+
+</body>
+
+
+</html>
