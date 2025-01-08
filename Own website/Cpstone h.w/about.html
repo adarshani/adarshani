@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Delicious Eats</title>
+        <style>
+            body {
+                font-family: 'Open Sans', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f8f9fa;
+            }
+    
+            header {
+                background: linear-gradient(90deg, rgba(255, 94, 58, 1) 0%, rgba(255, 149, 58, 1) 100%);
+                color: white;
+                padding: 15px 0;
+                text-align: center;
+            }
+    
+            nav {
+                display: flex;
+                justify-content: center;
+                background-color: #343a40;
+                padding: 10px 0;
+            }
+    
+            nav a {
+                color: white;
+                margin: 0 20px;
+                text-decoration: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+    
+            nav a:hover {
+                background-color: rgba(255, 149, 58, 0.8);
+            }
+    
+            .container {
+                max-width: 1200px;
+                margin: auto;
+                padding: 20px;
+            }
+    
+            .section {
+                margin-bottom: 40px;
+                padding: 20px;
+                border-radius: 10px;
+                background-color: white;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+    
+            .section img {
+                width: 100%;
+                max-width: 600px;
+                height: auto;
+                border-radius: 10px;
+                margin-top: 20px;
+            }
+    
+            .highlight-box {
+                background-color: #ff5e3a;
+                color: white;
+                padding: 15px;
+                border-radius: 10px;
+                margin-top: 20px;
+                font-size: 18px;
+            }
+    
+            .food-collage {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 20px;
+            }
+    
+            .food-collage img {
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+    
+            .testimonials {
+                display: flex;
+                justify-content: space-around;
+                margin-top: 40px;
+            }
+    
+            .testimonial {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 30%;
+            }
+    
+            .testimonial img {
+                border-radius: 50%;
+                width: 80px;
+                height: 80px;
+                margin-bottom: 10px;
+            }
+    
+            h1 {
+                color: #ff5e3a;
+            }
+    
+            h2 {
+                color: #343a40;
+                margin-bottom: 20px;
+            }
+    
+            p {
+                line-height: 1.6;
+                color: #555;
+            }
+    
+            footer {
+                background-color: #343a40;
+                color: white;
+                text-align: center;
+                padding: 15px 0;
+                position: fixed;
+                width: 100%;
+                bottom: 0;
+                box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </head>
+    
+    <body>
+        <header>
+            <h1>Delicious Eats</h1>
+            <nav>
+                <a href="#welcome-section">Home</a>
+                <a href="#about-section">About</a>
+                <a href="#menu-section">Menu</a>
+                <a href="#contact-section">Contact</a>
+            </nav>
+        </header>
+        <div class="container">
+            <!-- Home Section -->
+            <section id="welcome-section" class="section">
+                <h2>Welcome to Delicious Eats!</h2>
+                <p>Step into the inviting world of Delicious Eats, where every meal is crafted with passion and precision.
+                    Our restaurant is a haven for food lovers, where tradition meets innovation in a delightful fusion of
+                    flavors. Our talented chefs take pride in using only the freshest ingredients, sourced locally and
+                    sustainably, to create dishes that are both visually stunning and delicious. Whether you're here for a
+                    casual lunch, a romantic dinner, or a special celebration, we strive to provide an unforgettable dining
+                    experience.</p>
+                <div class="highlight-box">
+                    <p>“Cooking is like love. It should be entered into with abandon or not at all.” - Harriet van Horne</p>
+                </div>
+                <div class="food-collage">
+                    <img src="pasta.jpeg" alt="Delicious Dish 1">
+                    <img src="pizza.jpeg" alt="Delicious Dish 2">
+                    <img src="gb.jpeg" alt="Delicious Dish 3">
+                    <img src="pt.jpeg" alt="Delicious Dish 4">
+                    <img src="dosa.jpeg" alt="Delicious Dish 5">
+                    <img src="pp.jpeg" alt="Delicious Dish 6">
+                </div>
+            </section>
+            <!-- About Section -->
+            <section id="about-section" class="section">
+                <h2>About Us</h2>
+                <p>Welcome to Delicious Eats! Our restaurant is dedicated to offering a unique dining experience where
+                    tradition meets innovation. Our chefs are passionate about creating dishes that not only taste
+                    extraordinary but also look beautiful. We use the freshest ingredients, sourced locally and sustainably,
+                    to bring you a delightful culinary journey.</p>
+                <p>Our mission is to provide an unforgettable dining experience through exceptional food, a cozy atmosphere,
+                    and impeccable service. Whether you're here for a casual meal, a special celebration, or just to enjoy
+                    great food with friends, we strive to make every visit memorable.</p>
+                <div class="highlight-box">
+                    <p>“Food is the ingredient that binds us together.”</p>
+                </div>
+                <img src="interior.jpeg" alt="Restaurant Interior">
+            </section>
+    
+    </body>
+    
+    </html>
+
+</head>
+<body>
+    <section id="about-section" class="about-section">
+        <h2>About Us</h2>
+        <p>Welcome to Delicious Eats! Our restaurant is dedicated to offering a unique dining experience where tradition
+            meets innovation. Our chefs are passionate about creating dishes that not only taste extraordinary but also look
+            beautiful. We use the freshest ingredients, sourced locally and sustainably, to bring you a delightful culinary
+            journey.</p>
+        <p>Our mission is to provide an unforgettable dining experience through exceptional food, a cozy atmosphere, and
+            impeccable service. Whether you're here for a casual meal, a special celebration, or just to enjoy great food
+            with friends, we strive to make every visit memorable.</p>
+        <div class="highlight-box">
+            <p>“Food is the ingredient that binds us together.”</p>
+        </div>
+    </section>
+
+</body>
+</html>
