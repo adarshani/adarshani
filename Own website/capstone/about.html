@@ -5,23 +5,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            background-color: azure;
+    <head>
+        <style>
+            body {
+        
+                background-color: #deb878;
+        
+            }
+        
+            h1 {
+        
+                text-align: center;
+        
+                text-decoration: underline;
+        
+                text-transform: capitalize;
+        
+            }
+        
+            .carousel-container {
+        
+                display: flex;
+        
+                justify-content: center;
+        
+                align-items: center;
+        
+                height: 300px;
+                width: 300px;
+            }
+                /* Adjust based on your image height */
+        
+        
+                /* Hide all slides by default */
+        
+                .myslides {
+        
+                    display: none;
+        
+                    max-height: 100%;
+                    /* Ensure images fit within container */
+        
+                    max-width: 100%;
+                }
+                    .myslides{
 
-        }
+height: 500px;
 
-        #h2 {
-            text-align: center;
-            font-weight: bolder;
-            font-size: 50px;
-        }
-    </style>
+width:100%;
+
+}
+
+img{
+
+width:200px;
+
+}
+        
+        </style>
+    
 </head>
 
 <body>
     <h2 id="h2">About</h2>
-    <img src="pro1.jpeg" alt="1">
+    
+<div class="carousel-container">
+
+    <img class="myslides"
+        src="pro1.jpeg"
+
+        height="30" width="30" alt="Slide 1">
+
+    <img class="myslides"
+        src="pro2.jpeg"
+        height="30" width="30" alt="Slide 2">
+
+    <img class="myslides"
+        src="pro3.jpeg"
+        height="30" width="30" alt="Slide 3"></div>
+    <script>
+      var index = 0;
+
+        function carousel() {
+
+            var i;
+
+            var x = document.getElementsByClassName("myslides");
+
+            for (i = 0; i < x.length; i++) {
+                ``
+
+                x[i].style.display = "none";
+
+            }
+
+            index++;
+
+            if (index > x.length) {
+
+                index = 1;
+
+            }
+
+            x[index - 1].style.display = "block";
+
+            setTimeout(carousel, 2000);
+
+        }
+
+        carousel(); // Start the carousel when the page loads
+
+
+    </script>
 
 </body>
 

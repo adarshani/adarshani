@@ -54,6 +54,95 @@
             max-height: 100%;
             max-width: 100%;
         }
+     .pimg1{
+
+position:relative;
+
+opacity:0.70;
+
+background-position:center;
+
+background-size:cover;
+
+background-repeat:no-repeat;
+
+background-attachment:fixed;
+
+}
+
+.pimg3{
+
+background-image:url
+    ("bg.jpeg");
+
+
+min-height:400px
+
+}
+
+.section{
+
+text-align:center;
+
+padding:50px 80px;
+
+}
+
+.section-dark{
+
+background-color:#282e34;
+
+color:#ddd;
+
+}
+
+.ptext{
+
+position:absolute;
+
+top:50%;
+
+width:100%;
+
+text-align:center;
+
+color:#000;
+
+font-size:27px;
+
+letter-spacing:8px;
+
+text-transform:uppercase;
+
+}
+
+.ptext .border{
+
+background-color:#111;
+
+color:#fff;
+
+padding:20px;
+
+}
+
+.ptext .border.trans{
+
+background-color:transparent;
+
+}
+
+@media(max-width:568px){
+
+.pimg1{
+
+background-attachment:scroll;
+
+}
+
+}
+
+
     </style>
 </head>
 
@@ -71,31 +160,50 @@
         
 
     </div>
-    <div class="carousel-container">
-        <img class="myslides" src="pro2.jpeg" height="300" width="300" alt="slide2">
-        <!-- <img class="myslides" src="pro3.jpeg" height="300" width="300" alt="slide3">
-        <img class="myslides" src="pro1.jpeg" height="300" width="300" alt="slide1">
-        <img class="myslides" src="pro4.jpeg" height="300" width="300" alt="slide4"> -->
-    </div>
-    <script>
-        function carousel(){
-        var index=0;
-        var i;
-        var x = document.getElementsByName("myslides");
-        for (i = 0; i < x.length; i++){` `
-             x[i].style.display = "none";
-        }
-        index++;
-        if (index > x.length){
-            index=1;
-        }
+<span class="border trans" style="font-size:40px;">
 
-        x[index - 1].style.display = "Block";
-        setTimeout(carousel, 2000);
-            carousel()}
+<center>Welcome all to this website</center>
 
+</span><br>
+
+<section class="section-dark">
+
+    <h2>section one</h2>
+
+    <p> Profitilo is a comprehensive portfolio tracking app designed to help investors monitor and manage their investments
+    efficiently.
     
-    </script>
+    With Profitilo, users can access real-time updates on market trends, track their asset allocation, and analyze their
+    portfolio's performance with detailed reports.
+    
+    The app's intuitive dashboard provides a snapshot of your entire portfolio, including key performance metrics like ROI
+    and XIRR.
+    
+    Profitilo's transaction history feature allows users to keep a detailed record of their buy/sell orders and other
+    investment activities.
+    
+    Customizable alerts and notifications ensure you never miss important events like price changes or dividend payouts.</p>
+
+</section>
+
+<div class="pimg3">
+
+    <div class="ptext">
+
+        <span class="border trans">
+
+            magine having an app like Profitilo that not only tracks your investments but also learns from your spending habits and
+            savings goals. It could help you make smarter financial decisions by suggesting ways to save, invest, and even highlight
+            opportunities to grow your wealth. Essentially, it becomes your own personal financial coach, guiding you towards a more
+            secure and prosperous future.
+
+        </span>
+
+    </div>
+
+</div>
+
+  
     
 
 </body>
