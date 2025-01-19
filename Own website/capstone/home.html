@@ -54,92 +54,101 @@
             max-height: 100%;
             max-width: 100%;
         }
-     .pimg3{
+     /* General styles for the background image section */
 
-position:relative;
+.pimg {
 
-opacity:0.70;
+position: relative;
 
-background-position:center;
+opacity: 0.70;
 
-background-size:cover;
+background-position: center;
 
-background-repeat:no-repeat;
+background-size: cover;
 
-background-attachment:fixed;
+background-repeat: no-repeat;
 
-}
+background-attachment: fixed;
 
-.pimg3{
-
-background-image:url('p6.jpeg');
-
-min-height:100%;
+min-height: 400px;
 
 }
 
-.section{
+/* Section styling */
 
-text-align:center;
+.section {
 
-padding:50px 80px;
+text-align: center;
 
-}
-
-.section-dark{
-
-background-color:#282e34;
-
-color:#ddd;
+padding: 50px 80px;
 
 }
 
-.ptext{
+.section-light {
 
-position:absolute;
+background-color: #f4f4f4;
 
-top:50%;
-
-width:100%;
-
-text-align:center;
-
-color:#000;
-
-font-size:27px;
-
-letter-spacing:8px;
-
-text-transform:uppercase;
+color: #666;
 
 }
 
-.ptext .border{
+.section-dark {
 
-background-color:#111;
+background-color: #282e34;
 
-color:#fff;
-
-padding:20px;
+color: #ddd;
 
 }
 
-.ptext .border.trans{
+/* Text inside image sections */
 
-background-color:transparent;
+.ptext {
+
+position: absolute;
+
+top: 50%;
+
+width: 100%;
+
+text-align: center;
+
+color: #fff;
+
+font-size: 27px;
+
+letter-spacing: 8px;
+
+text-transform: uppercase;
 
 }
 
-@media(max-width:568px){
+.ptext .border {
 
-.pimg3{
+background-color: #111;
 
-background-attachment:scroll;
+color: #fff;
+
+padding: 20px;
+
+}
+
+.ptext .border.trans {
+
+background-color: transparent;
+
+}
+
+/* Responsive design for smaller screens */
+
+@media (max-width: 568px) {
+
+.pimg {
+
+background-attachment: scroll;
 
 }
 
 }
-
 
 
 
@@ -161,48 +170,80 @@ background-attachment:scroll;
         
 
     </div>
-<span class="border trans" style="font-size:40px;">
-
-<center>Welcome all to this website</center>
-
-</span><br>
-
-<section class="section-dark">
-
-    <h2>section one</h2>
-
-    <p> Profitilo is a comprehensive portfolio tracking app designed to help investors monitor and manage their investments
-    efficiently.
+    <!DOCTYPE html>
     
-    With Profitilo, users can access real-time updates on market trends, track their asset allocation, and analyze their
-    portfolio's performance with detailed reports.
+    <html lang="en">
     
-    The app's intuitive dashboard provides a snapshot of your entire portfolio, including key performance metrics like ROI
-    and XIRR.
+    <head>
     
-    Profitilo's transaction history feature allows users to keep a detailed record of their buy/sell orders and other
-    investment activities.
+        <meta charset="UTF-8">
     
-    Customizable alerts and notifications ensure you never miss important events like price changes or dividend payouts.</p>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>Website</title>
+    
+        <link rel="stylesheet" href="style.css">
+        <style>
+            .footer{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: aliceblue;
+            background-color: black;
+            text-align: center;
+             font-size: 30px;
+             
+        }
+        </style>
+    
+    </head>
+    
+    <body>
+    
+        <header>
+    
+            <span class="border trans" style="font-size:40px;">
+    
+                <center>Welcome all to this website</center>
+    
+            </span>
+    
+            <br>
+    
+        </header>
+    
+        <section class="section section-dark">
+    
+            <h2>Section One</h2>
+    
+            <p>
+    
+                offers a browser extension and mobile app that allow users to scan products and analyze data instantly to determine
+                potential profitability. The app also provides features like a wholesale scanner, unlimited scans, and a community forum
+                for users to learn and share insights
+            </p>
+    
+        </section>
+    
+        <div class="pimg"
+            style="background-image: url('images/bg.jpeg');">
+    
+            <div class="ptext">
+                
+               
+    
+                <span class="border trans">Image Two Text</span>
+    
+            </div>
+    
+        </div>
+        <div class="footer">Copysright@swatisingh.com</div>
+    
+    </body>
+    
+    </html>
 
-</section>
-
-<div class="pimg3">
-
-    <div class="ptext">
-
-        <span class="border trans">
-
-            magine having an app like Profitilo that not only tracks your investments but also learns from your spending habits and
-            savings goals. It could help you make smarter financial decisions by suggesting ways to save, invest, and even highlight
-            opportunities to grow your wealth. Essentially, it becomes your own personal financial coach, guiding you towards a more
-            secure and prosperous future.
-
-        </span>
-
-    </div>
-
-</div>
 
 
 
