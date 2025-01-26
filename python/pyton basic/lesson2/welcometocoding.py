@@ -8,6 +8,6 @@ print(10)
 print("hello python \n")
 
 #multiple arguments
-print("hello",4)
+print("hello",4+2,",",4,True)
 
 print("thankyou",end ="*")
