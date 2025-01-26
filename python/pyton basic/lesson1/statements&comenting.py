@@ -9,4 +9,4 @@ print("Python is easy to learn")
 print("Python is open source")
 
 #some sums
-print("add 3 and 5",3+5)
+print("add 3 and 5 =",3+5)
