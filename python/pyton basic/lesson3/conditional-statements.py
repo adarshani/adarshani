@@ -5,3 +5,6 @@ if var > 0:
 var = -4
 if var < 0:
     print("The number is negative")
+
+    
+
