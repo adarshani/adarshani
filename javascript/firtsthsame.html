@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumping Game</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        .game-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .player {
+            position: absolute;
+            bottom: 0;
+            left: 50px;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+        .obstacle {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            animation: moveObstacle 2s linear infinite;
+        }
+        @keyframes moveObstacle {
+            from {
+                right: 0;
+            }
+            to {
+                right: 100vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="player" id="player"></div>
+        <div class="obstacle" id="obstacle"></div>
+    </div>
+    <script>
+        const player = document.getElementById('player');
+        let isJumping = false;
+
+        document.addEventListener('keydown', function(event) {
+            if (event.code === 'Space' && !isJumping) {
+                jump();
+            }
+        });
+
+        function jump() {
+            isJumping = true;
+            let jumpHeight = 0;
+            const jumpInterval = setInterval(() => {
+                if (jumpHeight >= 150) {
+                    clearInterval(jumpInterval);
+                    const fallInterval = setInterval(() => {
+                        if (jumpHeight <= 0) {
+                            clearInterval(fallInterval);
+                            isJumping = false;
+                        } else {
+                            jumpHeight -= 5;
+                            player.style.bottom = jumpHeight + 'px';
+                        }
+                    }, 20);
+                } else {
+                    jumpHeight += 5;
+                    player.style.bottom = jumpHeight + 'px';
+                }
+            }, 20);
+        }
+    </script>
+</body>
+</html>
+<script>
+    const obstacle = document.getElementById('obstacle');
+    let gameOver = false;
+
+    function checkCollision() {
+        const playerRect = player.getBoundingClientRect();
+        const obstacleRect = obstacle.getBoundingClientRect();
+
+        if (
+            playerRect.right > obstacleRect.left &&
+            playerRect.left < obstacleRect.right &&
+            playerRect.bottom > obstacleRect.top &&
+            playerRect.top < obstacleRect.bottom
+        ) {
+            gameOver = true;
+            alert('Game Over!');
+            resetGame();
+        }
+    }
+
+    function resetGame() {
+        player.style.bottom = '0px';
+        isJumping = false;
+        gameOver = false;
+    }
+
+    function gameLoop() {
+        if (!gameOver) {
+            checkCollision();
+            requestAnimationFrame(gameLoop);
+        }
+    }
+
+    gameLoop();
+</script>
