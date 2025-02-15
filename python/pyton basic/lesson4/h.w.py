@@ -10,3 +10,4 @@ else:
         print("\n\"" +c+ "\" is an alphabet." )
     else:
         print("\n\"" +c+ "\" is not an alphabet." )
+
