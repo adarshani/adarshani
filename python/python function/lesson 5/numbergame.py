@@ -1,6 +1,6 @@
 import random
 playing = True
-number = str(random.randint(1,20))
+number = str(random.randint(1,9))
 
 print('I will generate a number From 0 to 9,amd you have to guess the number one digit at a time')
 print('the game ends when you get one')
